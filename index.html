@@ -9,8 +9,8 @@
 </head>
 
 <body>
-  <div class="relative w-full h-screen overflow-hidden" id="app">
-    <div class="absolute top-0 w-full flex items-center justify-between py-2 px-6 bg-black text-white font-semibold">
+  <div class="relative w-full h-screen overflow-hidden bg-[#E3E3E3]" id="app">
+    <div class="absolute top-0 w-full flex items-center justify-between py-2 px-6 bg-white text-black font-semibold">
       <a class="underline underline-offset-2" href="https://x.com/ln_dev7">
         Code by LN
       </a>
@@ -21,11 +21,45 @@
         Figma
       </a>
     </div>
-    <div class="w-full h-full flex items-center justify-center p-4">
-      <h1 className="text-3xl font-bold underline">
-        FUN ANIMATION TEMPLATE
-      </h1>
+    <div class="content relative w-full h-full flex flex-col items-center justify-center p-4">
+      <div class="w-full absolute top-52 h-[240px] overflow-hidden">
+        <div class="text flex flex-col items-center">
+          <h2 class="text-6xl font-bold">FORD</h2>
+          <h1 class="text-[200px] font-bold leading-[0.9]">MUSTANG</h1>
+        </div>
+        <div class="text flex flex-col items-center">
+          <h2 class="text-6xl font-bold">AUDI</h2>
+          <h1 class="text-[200px] font-bold leading-[0.9]">A3</h1>
+        </div>
+        <div class="text flex flex-col items-center">
+          <h2 class="text-6xl font-bold">LEXUS</h2>
+          <h1 class="text-[200px] font-bold leading-[0.9]">LC SERIES</h1>
+        </div>
+      </div>
+      <div class="w-full flex items-center z-30 pt-32">
+        <div class="car w-full shrink-0 flex items-center justify-center">
+          <img class="w-[1000px]" src="/car-1.png" alt="Car-1" />
+        </div>
+        <div class="car w-full shrink-0 flex items-center justify-center">
+          <img class="w-[1000px]" src="/car-2.png" alt="Car-2" />
+        </div>
+        <div class="car w-full shrink-0 flex items-center justify-center">
+          <img class="w-[1000px]" src="/car-3.png" alt="Car-3" />
+        </div>
+      </div>
+      <button class="show w-40 bg-white rounded-full font-semibold p-4 mt-10 opacity-0 translate-y-20">
+        Show details
+      </button>
     </div>
+    <button class="bg-white z-40 p-2 rounded-full arrow-left absolute top-1/2 left-4 transform -translate-y-1/2">
+      <img src="/arrow-left.svg" alt="arrow-left" />
+    </button>
+    <button class="bg-white z-40 p-2 rounded-full arrow-right absolute top-1/2 right-4 transform -translate-y-1/2">
+      <img src="/arrow-right.svg" alt="arrow-right" />
+    </button>
+    <button class="bg-white z-40 p-2 rounded-full arrow-left absolute top-16 left-4 back hidden transform">
+      <img src="/arrow-left.svg" alt="arrow-left" />
+    </button>
   </div>
   <script type="module" src="/main.js"></script>
 </body>
