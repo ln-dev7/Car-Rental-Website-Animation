@@ -12,6 +12,7 @@ const back = document.querySelector(".back");
 
 const cars = document.querySelectorAll(".car");
 const texts = document.querySelectorAll(".text");
+const images = document.querySelectorAll(".image");
 
 let currentCar = 0;
 
@@ -75,6 +76,16 @@ show.addEventListener("click", () => {
     ease: ease,
     opacity: 0,
     y: 80,
+    onComplete: () => {
+      images.forEach((image, index) => {
+        gsap.to(image, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          delay: index * 0.15,
+        });
+      });
+    },
   });
   gsap.to(".content", {
     y: -100,
@@ -91,22 +102,32 @@ show.addEventListener("click", () => {
 });
 
 back.addEventListener("click", () => {
-  gsap.to(show, {
-    duration: duration,
-    ease: ease,
-    opacity: 1,
-    y: 0,
-  });
-  gsap.to(".content", {
-    y: 0,
-    scale: 1,
-    duration: duration,
-    ease: ease,
-  });
-  gsap.to(".arrow-left, .arrow-right", {
-    display: "block",
-  });
-  gsap.to(back, {
-    display: "none",
+  images.forEach((image, index) => {
+    gsap.to(image, {
+      y: (index + 1) * 32,
+      opacity: 0,
+      duration: 1,
+      delay: index * 0.15,
+      onComplete: () => {
+        gsap.to(show, {
+          duration: duration,
+          ease: ease,
+          opacity: 1,
+          y: 0,
+        });
+        gsap.to(".content", {
+          y: 0,
+          scale: 1,
+          duration: duration,
+          ease: ease,
+        });
+        gsap.to(".arrow-left, .arrow-right", {
+          display: "block",
+        });
+        gsap.to(back, {
+          display: "none",
+        });
+      },
+    });
   });
 });
